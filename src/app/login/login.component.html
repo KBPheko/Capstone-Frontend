@@ -1,0 +1,22 @@
+<div>
+
+  <h2>Sign In</h2>
+  <form [formGroup]="loginRef" (ngSubmit)="signIn()">
+
+    <label for="email">Email Address</label> <br>
+    <input type="email" formControlName="email" /> <br>
+
+    <label for="password">Password</label> <br>
+    <input type="password" /> <br>
+
+    <label for="role">Role</label>
+    <input type="radio" name="role" value="admin" formControlName="role" /> Admin
+    <input type="radio" name="role" value="user" formControlName="role"> User
+
+    <br>
+    <input type="submit" value="Sign In" /> &nbsp;
+    <input type="reset" value="Reset Fields">
+
+  </form>
+
+</div>
