@@ -1,1 +1,38 @@
-<p>createprofile works!</p>
+<div class="text-center">
+
+  <span style="color: red">{{errorMsg}}</span>
+
+  <h2>Create Profile</h2>
+  <form [formGroup]="createRef" (ngSubmit)="createProfile()">
+
+    <label for="firstname">First Name</label> <br>
+    <input type="text" formControlName="firstname" /> <br>
+
+    <label for="lastname">Last Name</label> <br>
+    <input type="text" formControlName="lastname" /> <br>
+
+    <label for="mobilenumber">Mobile Number</label> <br>
+    <input type="text" formControlName="mobilenumber" /> <br>
+
+    <label for="dob">Date of Birth</label> <br>
+    <input type="date" formControlName="dob" /> <br>
+
+    <label for="email">Email Address</label> <br>
+    <input type="email" formControlName="email" /> <br>
+
+    <label for="password">Password</label> <br>
+    <input type="password" formControlName="password" /> <br>
+
+    <label for="role">Role</label> &nbsp;
+    <input type="radio" name="role" value="admin" formControlName="role" /> Admin
+    <input type="radio" name="role" value="user" formControlName="role"> User
+
+    <br>
+    <input type="submit" value="Create Profile" /> &nbsp;
+    <input type="reset" value="Clear Fields">
+
+  </form>
+  <br>
+  <a routerLink="/signin">Sign In</a>
+
+</div>

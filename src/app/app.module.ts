@@ -15,6 +15,8 @@ import { LoginComponent } from './login/login.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { AboutComponent } from './about/about.component';
+import { AddMovieComponent } from './add-movie/add-movie.component';
+import { EditMovieComponent } from './edit-movie/edit-movie.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { AboutComponent } from './about/about.component';
     LoginComponent,
     PageNotFoundComponent,
     ContactUsComponent,
-    AboutComponent
+    AboutComponent,
+    AddMovieComponent,
+    EditMovieComponent
   ],
   imports: [
     BrowserModule,

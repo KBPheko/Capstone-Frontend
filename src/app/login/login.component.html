@@ -1,4 +1,6 @@
-<div>
+<div class="text-center">
+
+  <span style="color: red">{{errorMsg}}</span>
 
   <h2>Sign In</h2>
   <form [formGroup]="loginRef" (ngSubmit)="signIn()">
@@ -9,14 +11,16 @@
     <label for="password">Password</label> <br>
     <input type="password" formControlName="password" /> <br>
 
-    <label for="role">Role</label>
+    <label for="role">Role</label> &nbsp;
     <input type="radio" name="role" value="admin" formControlName="role" /> Admin
     <input type="radio" name="role" value="user" formControlName="role"> User
 
     <br>
     <input type="submit" value="Sign In" /> &nbsp;
-    <input type="reset" value="Reset Fields">
+    <input type="reset" value="Clear Fields">
 
   </form>
+  <br>
+  <a routerLink="/create-profile">Create Profile</a>
 
 </div>
