@@ -1,3 +1,40 @@
-<div>
-  
+<h2>All Movie Records</h2>
+<button type="button" [routerLink]="['/admin-dashboard']"  class="btn btn-dark">Back</button>
+<div class="table-responsive-lg table-container">
+
+  <table class="table table-striped table-dark">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Image ID</th>
+        <th scope="col">Movie Title</th>
+        <th scope="col">Genre</th>
+        <th scope="col">Description</th>
+        <th scope="col">Language</th>
+        <th scope="col">Ticket price</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Show Times</th>
+        <th scope="col">Action</th>
+
+      </tr>
+    </thead>
+    <tbody *ngFor="let mv of movies" >
+      <tr>
+        <th scope="row">{{mv.mid}}</th>
+        <td> <img src="{{mv.imageurl}}" width="100px" height="100px" /> </td>
+        <td>{{mv.movietitle}}</td>
+        <td>{{mv.genre}}</td>
+        <td>{{mv.description}}</td>
+        <td>{{mv.language}}</td>
+        <td>{{mv.ticketprice}}</td>
+        <td>{{mv.quantity}}</td>
+        <td>{{mv.showtime}}</td>
+        <td> <button type="button" class="btn btn-danger" (click)="deleteMovieRecord(mv.mid)" >X</button> &nbsp;
+             <button type="button" class="btn btn-success" (click)="editMovieRecord(mv)" >E</button>
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+
 </div>

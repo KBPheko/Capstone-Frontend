@@ -24,4 +24,20 @@ export class RetrieveAllMoviesComponent implements OnInit {
     })
   }
 
+  deleteMovieRecord(mid:any){
+    console.log(mid);
+    this.ms.deleteMovieRecord(mid).subscribe({
+      next:(result:any)=>console.log(result),
+      error:(error:any)=>console.log(error),
+      complete:()=>{
+        console.log("record deleted successfully")
+        this.loadAllMovies()
+      }
+    })
+  }
+
+  editMovieRecord(mv:any){
+    console.log(mv);
+  }
+
 }
