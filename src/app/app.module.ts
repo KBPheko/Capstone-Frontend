@@ -17,6 +17,8 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { AboutComponent } from './about/about.component';
 import { AddMovieComponent } from './add-movie/add-movie.component';
 import { EditMovieComponent } from './edit-movie/edit-movie.component';
+import { RetrieveAllMoviesComponent } from './retrieve-all-movies/retrieve-all-movies.component';
+import { DisplayAllMoviesComponent } from './display-all-movies/display-all-movies.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { EditMovieComponent } from './edit-movie/edit-movie.component';
     ContactUsComponent,
     AboutComponent,
     AddMovieComponent,
-    EditMovieComponent
+    EditMovieComponent,
+    RetrieveAllMoviesComponent,
+    DisplayAllMoviesComponent
   ],
   imports: [
     BrowserModule,

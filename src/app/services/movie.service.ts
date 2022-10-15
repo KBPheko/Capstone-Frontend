@@ -12,11 +12,11 @@ export class MovieService {
   constructor( public _http: HttpClient) { }
 
   storeMovieRecord(movie: any):Observable<string> {
-    return this._http.post(this.baseUrl+"/movie/store", movie,{responseType:"text"});
+    return this._http.post(this.baseUrl+"/store", movie,{responseType:"text"});
   }
 
   updateMovieRecords(movie:any):Observable<string> {
-    return this._http.put(this.baseUrl+"/movie/update", movie,{responseType:"text"});
+    return this._http.put(this.baseUrl+"/update", movie,{responseType:"text"});
   }
 
   getAllMovieRecords():Observable<Movie[]>{

@@ -1,1 +1,39 @@
-<p>add-movie works!</p>
+<div>
+  <h2>Add New Movie Record</h2>
+  <br/>
+  <span style="color:red">{{msg}}</span>
+  <form [formGroup]="movieRef" (ngSubmit)="storeMovieRecord()">
+    <label for="movietitle">Movie Title</label>
+    <input type="text" formControlName="movietitle"/> <br>
+
+    <label for="imageurl">ImageUrl</label>
+    <input type="text" formControlName="imageurl"/> <br>
+
+    <label for="ticketprice">Ticket Price</label>
+    <input type="number" formControlName="ticketprice"/> <br>
+
+    <label for="quantity">Quantity</label>
+    <input type="number" formControlName="quantity"/> <br>
+
+    <label for="language">Language</label>
+    <input type="radio" name="language" value="english" formControlName="language" /> Engiish
+    <input type="radio" name="language" value="spanish" formControlName="language" /> Spanish <br>
+
+
+    <label for="description">Description</label>
+    <input type="text" formControlName="description"/> <br>
+
+    <label for="genre">Genre</label>
+    <input type="radio" name="genre" value="horror" formControlName="genre" /> Horror
+    <input type="radio" name="genre" value="action" formControlName="genre" /> Action
+    <input type="radio" name="genre" value="romance" formControlName="genre" /> Romance <br>
+
+
+    <label for="showtime">Show Time</label>
+    <input type="text" formControlName="showtime"/> <br>
+
+    <input type="submit" value="Add" /> &nbsp;
+    <input type="reset" value="Clear Fields">
+
+  </form>
+</div>
