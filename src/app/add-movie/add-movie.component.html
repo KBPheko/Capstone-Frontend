@@ -1,41 +1,57 @@
-<div>
+<div class="container">
   <button type="button" [routerLink]="['/admin-dashboard']"  class="btn btn-dark">Back</button>
 
   <h2>Add New Movie Record</h2>
   <br/>
   <span style="color:red">{{msg}}</span>
   <form [formGroup]="movieRef" (ngSubmit)="storeMovieRecord()">
-    <label for="movietitle">Movie Title</label>
-    <input type="text" formControlName="movietitle"/> <br>
+    <div class="form-group">
+      <label for="movietitle">Movie Title</label>
+      <input type="text" formControlName="movietitle" class="form-control" /> <br>
+    </div>
 
-    <label for="imageurl">ImageUrl</label>
-    <input type="text" formControlName="imageurl"/> <br>
+    <div class="form-group">
+      <label for="imageurl">ImageUrl</label>
+      <input type="text" formControlName="imageurl" class="form-control" /> <br>
+    </div>
 
-    <label for="ticketprice">Ticket Price</label>
-    <input type="number" formControlName="ticketprice"/> <br>
+    <div class="form-group">
+      <label for="ticketprice">Ticket Price</label>
+      <input type="number" formControlName="ticketprice" class="form-control" /> <br>
 
-    <label for="quantity">Quantity</label>
-    <input type="number" formControlName="quantity"/> <br>
+    </div>
 
-    <label for="language">Language</label>
-    <input type="radio" name="language" value="english" formControlName="language" /> Engiish
-    <input type="radio" name="language" value="spanish" formControlName="language" /> Spanish <br>
+    <div class="form-group">
+      <label for="quantity">Quantity</label>
+      <input type="number" formControlName="quantity" class="form-control" /> <br>
+    </div>
 
+    <div class="form-group">
+      <label for="language">Language</label>  &nbsp;
+      <input type="radio" name="language" value="english" formControlName="language" /> Engiish
+      <input type="radio" name="language" value="spanish" formControlName="language" /> Spanish <br>
+    </div>
 
-    <label for="description">Description</label>
-    <input type="text" formControlName="description"/> <br>
+    <br>
+    <div class="form-group">
+      <label for="description">Description</label>
+      <input type="text" formControlName="description" class="form-control" /> <br>
+    </div>
 
-    <label for="genre">Genre</label>
-    <input type="radio" name="genre" value="horror" formControlName="genre" /> Horror
-    <input type="radio" name="genre" value="action" formControlName="genre" /> Action
-    <input type="radio" name="genre" value="romance" formControlName="genre" /> Romance <br>
+    <div class="form-group">
+      <label for="genre">Genre</label> &nbsp;
+      <input type="radio" name="genre" value="horror" formControlName="genre" /> Horror
+      <input type="radio" name="genre" value="action" formControlName="genre" /> Action
+      <input type="radio" name="genre" value="romance" formControlName="genre" /> Romance <br>
+    </div>
+    <br>
+    <div class="form-group">
+      <label for="showtime">Show Time</label>
+      <input type="text" formControlName="showtime" class="form-control" placeholder="12:00-14:00"/> <br>
+    </div>
 
-
-    <label for="showtime">Show Time</label>
-    <input type="text" formControlName="showtime"/> <br>
-
-    <input type="submit" value="Add" /> &nbsp;
-    <input type="reset" value="Clear Fields">
+    <input type="submit" class="btn btn-secondary"value="Add" /> &nbsp;
+    <input type="reset" class="btn btn-secondary" value="Clear Fields">
 
   </form>
 </div>

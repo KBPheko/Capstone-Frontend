@@ -1,1 +1,27 @@
-<p>display-all-movies works!</p>
+<nav class="movie-filter">
+  <h1>Movies</h1>
+  <div class="sort">
+    <div class="collection-sort">
+      <label for="">Filter By</label>
+      <input type="text" name="" id="" placeholder="all movies">
+    </div> &nbsp; &nbsp;
+    <div class="collection-sort">
+      <label for="">Sort By</label>
+      <input type="text" placeholder="horror"/>
+    </div>
+  </div>
+</nav>
+<div>
+  <div class="movie-card-container">
+    <span *ngFor="let mv of movies">
+      <div class="card" >
+        <img src="{{mv.imageurl}}" alt="Movie Image" width="300px" height="500px">
+        <h2>{{mv.movietitle}}</h2>
+        <p class="price">R{{mv.ticketprice}}</p>
+        <p><button>Book Now</button></p>
+      </div>
+    </span>
+
+
+  </div>
+</div>

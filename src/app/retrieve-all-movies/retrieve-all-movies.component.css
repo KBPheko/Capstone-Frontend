@@ -1,3 +1,10 @@
-.table-container{
+.table-responsive{
   padding: 30px;
+}
+
+.edit-container{
+  padding: 60px;
+}
+.container{
+  border-radius: 1px solid black;
 }

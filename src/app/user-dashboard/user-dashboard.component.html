@@ -1,7 +1,12 @@
-<div>
-  <h2>Hi, {{userName}}</h2>
+<div class="first-row">
+  <h2>{{userName}}</h2>
 
   <br>
 
-  <input type="button" value="logout" (click)="logout()" />
+  <input type="button" value="logout" class="btn btn-dark"(click)="logout()" />
 </div>
+<div class="movie-container">
+  <app-display-all-movies></app-display-all-movies>
+</div>
+
+
