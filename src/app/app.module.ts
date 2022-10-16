@@ -19,7 +19,6 @@ import { AddMovieComponent } from './add-movie/add-movie.component';
 import { EditMovieComponent } from './edit-movie/edit-movie.component';
 import { RetrieveAllMoviesComponent } from './retrieve-all-movies/retrieve-all-movies.component';
 import { DisplayAllMoviesComponent } from './display-all-movies/display-all-movies.component';
-import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 
 @NgModule({
@@ -38,7 +37,6 @@ import { CheckoutComponent } from './checkout/checkout.component';
     EditMovieComponent,
     RetrieveAllMoviesComponent,
     DisplayAllMoviesComponent,
-    CartComponent,
     CheckoutComponent
   ],
   imports: [
