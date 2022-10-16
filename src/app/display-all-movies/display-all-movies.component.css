@@ -1,28 +1,16 @@
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+.card{
+  box-shadow: 0 4px 8px 0 rgba(188, 129, 129, 0.2);
+  display: inline-block;
+  border: 10px solid transparent;
+  margin: 10px;
   max-width: 300px;
-  margin: auto;
-  /*text-align: center;*/
-  font-family: arial;
 }
-.movie-card-container{
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
+.card img{
+  height: 325px;
+  width: 300px;
 }
-.movie-filter{
-  display: flex;
-}
-.movie-filter h1{
-  flex-grow: 1;
-}
-.sort{
-  display: flex;
-}
-.collection-sort{
-  display: flex;
-  flex-direction: column;
-}
+
 
 .price {
   color: grey;
@@ -43,3 +31,47 @@
 .card button:hover {
   opacity: 0.7;
 }
+.movie-filter{
+  display: flex;
+}
+.movie-filter h1{
+  flex-grow: 1;
+}
+.sort{
+  display: flex;
+}
+.collection-sort{
+  display: flex;
+  flex-direction: column;
+}
+
+
+/*NEW CSS
+.movie-wrapper .flex.sm3{
+  flex-basis: 25%;
+  max-width: 25%;
+}
+.movie-wrapper .flex.xs6{
+  flex-basis: 50%;
+  max-width: 50%;
+}
+.movie-wrapper .flex {
+  padding-right: 00.5rem;
+  padding-left: 0.5rem;
+}
+.movie-wrapper.wrap{
+  flex-wrap: wrap;
+}
+.movie-wrapper.row{
+  flex-direction: row;
+}
+.movie-wrapper.column, .movie-wrapper.row{
+  flex: 0 1 auto;
+}
+.movie-wrapper{
+  display: flex;
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
+}
+
+*/
