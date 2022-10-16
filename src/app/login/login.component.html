@@ -1,26 +1,32 @@
-<div class="text-center">
 
-  <span style="color: red">{{errorMsg}}</span>
 
-  <h2>Sign In</h2>
-  <form [formGroup]="loginRef" (ngSubmit)="signIn()">
+<div class="wrapper">
+  <div class="formContent">
 
-    <label for="email">Email Address</label> <br>
-    <input type="email" formControlName="email" /> <br>
+    <span>{{errorMsg}}</span>
 
-    <label for="password">Password</label> <br>
-    <input type="password" formControlName="password" /> <br>
+    <h2>Sign In</h2>
+    <form [formGroup]="loginRef" (ngSubmit)="signIn()">
 
-    <label for="role">Role</label> &nbsp;
-    <input type="radio" name="role" value="admin" formControlName="role" /> Admin
-    <input type="radio" name="role" value="user" formControlName="role"> User
+      <label for="email">Email Address</label> <br>
+      <input type="email" formControlName="email" placeholder="example@gmail.com" /> <br>
 
-    <br>
-    <input type="submit" value="Sign In" /> &nbsp;
-    <input type="reset" value="Clear Fields">
+      <label for="password">Password</label> <br>
+      <input type="password" formControlName="password" placeholder="****" /> <br>
 
-  </form>
-  <br>
-  <a routerLink="/create-profile">Create Profile</a>
+     <!-- <label for="role">Role</label> &nbsp;
+      <input type="radio" name="role" value="admin" formControlName="role" /> Admin
+      <input type="radio" name="role" value="user" formControlName="role"> User
+     -->
+      <br>
+      <input type="submit" value="Sign In" /> &nbsp;
+      <input type="reset" value="Clear Fields">
 
+    </form>
+    <div class="formFooter">
+      <a routerLink="/create-profile">Create Profile</a>
+
+    </div>
+
+  </div>
 </div>
