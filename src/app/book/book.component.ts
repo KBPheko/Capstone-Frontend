@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Movie } from '../movie';
 import { BookingServiceService } from '../services/booking-service.service';
+import { MovieService } from '../services/movie.service';
 
 @Component({
   selector: 'app-book',
@@ -11,14 +12,16 @@ import { BookingServiceService } from '../services/booking-service.service';
 })
 export class BookComponent implements OnInit {
 
-  bookingForm!: FormGroup;
-  errorMessage: string = '';
+  bookingForm: FormGroup;
+  errorMessage: string;
+  bid:any;
   movieid: any;
-  bookingId: number = 0;
+  bookingId: number;
   movie: Movie;
 
   constructor( private fb: FormBuilder,
     private bookService: BookingServiceService,
+    private movieServe: MovieService,
     private router: Router,
     private ar: ActivatedRoute) { }
 
@@ -34,21 +37,26 @@ export class BookComponent implements OnInit {
     console.log("Booking page started");
     this.movieid = this.ar.snapshot.paramMap.get('id');
     console.log(this.movieid);
+    this.movieServe.findMovieInfo(this.movieid).subscribe((data: Movie) => {
+      this.movie = data;
+      console.log(data);  //double check
+    })
     //this.bookService.findBookingById(this.bid).subscribe( result => {
-      
+
    // })
   }
 
   addBooking(){
-    this.bookService.addBooking(this.bookingForm.value, this.movieid).subscribe(
-      (res:any) => {
-        console.log(res.bid);
-        this.router.navigate(['booking-summary', res.bid]);
-      },
-      (error:any) => {
-        this.errorMessage = error;
-      }
-    )
+    this.router.navigate(['/booking-summary/', this.bid]);
+    // this.bookService.addBooking(this.bookingForm.value, this.movieid).subscribe(
+    //   (res:any) => {
+    //     console.log(res.bid);
+    //     this.router.navigate(['/booking-summary', res.bid]);
+    //   },
+    //   (error:any) => {
+    //     this.errorMessage = error;
+    //   }
+    // )
   }
 
   // addBooking(){

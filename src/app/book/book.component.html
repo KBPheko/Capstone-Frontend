@@ -1,25 +1,80 @@
 <section class="booking">
-  <div class="custom-container">
-    <h3 style="color: red ">{{errorMessage}}</h3>
-    <form [formGroup]="bookingForm" (ngSubmit)="addBooking()">
-      <div class="form-row">
-        <p>Movie ID{{movie.mid}}</p>
-        <div class="form-group">
-          <div class="form-row">
-            <div class="date">
-              <label for="">Book Date You would Like to see movie</label>
-              <input type="date" class="form-control" formControlName="bookingDate" />
-            </div>
+  <button class="btn btn-dark" [routerLink]="['/user-dashboard']">Back</button>
+
+  <div class="container">
+    <div class="details">
+      <div class="row flexbox-center">
+        <div class="col-lg-5 text-lg-left text-center">
+          <div class="movieDetails-content">
+            <img src="{{movie.imageurl}}" alt="" />
           </div>
         </div>
-        <div>
-
-
-          <button [routerLink]="['/user-dashboard']" type="submit" class="btn btn-danger">Cancel</button>
-
-          <button type="submit" class="btn btn-success">Proceed</button>
+        <div class="col-lg-7">
+          <div class="movieDetails-content">
+            <ul>
+              <li>
+                <div class="movieDetail-left">Movie:</div>
+                <div class="movieDetail-right">
+                  <div class="movieDetail-right">{{ movie.movietitle }}</div>
+                </div>
+              </li>
+              <li>
+                <div class="movieDetail-left">Show Time:</div>
+                <div class="movieDetail-right">{{ movie.showtime }}</div>
+              </li>
+              <li>
+                <div class="movieDetail-left">Language:</div>
+                <div class="movieDetail-right">{{ movie.language }}</div>
+              </li>
+              <li>
+                <div class="movieDetail-left">Genre:</div>
+                <div class="movieDetail-right">{{ movie.genre }}</div>
+              </li>
+              <li>
+                <div class="movieDetail-left">Description:</div>
+                <div class="movieDetail-right">
+                  {{ movie.description }}
+                </div>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-    </form>
+    </div>
+  </div>
+  <div class="wrapper">
+    <div class="main">
+      <section class="section">
+
+        <form action="">
+          <div class="form-group row">
+            <label for="date" class="col-sm-2 col-form-label">Date:</label>
+            <div class="col-sm-10">
+              <input type="date" class="form-control" id="date" >
+            </div>
+          </div>
+          <br>
+          <div class="form-group row">
+            <label for="tickets" class="col-sm-2 col-form-label">No. ofTickets:</label>
+            <div class="col-sm-10">
+              <input type="number" class="form-control" id="tickets" >
+            </div>
+          </div>
+          <br>
+          <div class="adminList-element adminList-setting">
+            <button
+              (click)="addBooking()"
+              class="focus--box-shadow"
+              type="submit"
+              style="color: #dd2b60"
+            >
+              Book
+            </button>
+          </div>
+        </form>
+
+
+      </section>
+    </div>
   </div>
 </section>

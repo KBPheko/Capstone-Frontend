@@ -46,6 +46,61 @@
 }
 
 
+.section-title h1 i {
+  color: #fece50;
+  font-size: 40px;
+  margin: 0 1rem 0 1rem;
+}
+
+.portfolio-menu {
+  padding-top: 30px;
+}
+
+.portfolio-menu li {
+  display: inline-block;
+  position: relative;
+  margin-left: 15px;
+  padding-bottom: 20px;
+  cursor: pointer;
+}
+
+.portfolio-menu li::before {
+  background: transparent;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  transition: 0.4s;
+  content: "";
+  height: 4px;
+  position: absolute;
+  z-index: 99;
+}
+
+.portfolio-menu li.active {
+  color: #fff;
+}
+
+.portfolio-menu li.active::before,
+.portfolio-menu li:hover::before {
+  background: #eb315a;
+}
+
+.section-title {
+  margin-top: 1rem;
+}
+
+.search {
+  position: absolute;
+  top: 2rem;
+  right: 4rem;
+  width: 20%;
+  background-color: rgba(255, 255, 255, 0.548);
+  border: 3px solid black;
+  border-radius: 5px;
+  box-shadow: rgba(255, 255, 255, 0.911);
+}
+
+
 /*NEW CSS
 .movie-wrapper .flex.sm3{
   flex-basis: 25%;
