@@ -1,0 +1,39 @@
+<section class="detailMovie">
+  <div class="container">
+    <div class="section-title">
+      <h1>Booking Summary</h1>
+    </div>
+    <hr>
+    <div class="details">
+      <div class="row flexbox-center">
+        <div class="col-lg-7">
+          <div class="movieDetails-content">
+            <h2>Booking Details</h2>
+            <br>
+            <ul>
+              <li>
+                <div class="movieDetail-left">Movie:</div>
+                <div class="movieDetail-right">
+                  <p>{{booking.Movie.movietitle}}</p>
+                </div>
+              </li>
+              <li>
+                <div class="movieDetail-left">Movie Date:</div>
+                <div class="movieDetail-right">
+                  <p>{{booking.Movie.showtime}}</p>
+                </div>
+              </li>
+              <li>
+                <div class="movieDetail-left">Total Cost:</div>
+                <div class="movieDetail-right">
+                  <p>{{booking.totalprice}}</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <a routerLink="/user-dashboard" class="btn btn-primary">Back To Movies</a>
+    </div>
+  </div>
+</section>

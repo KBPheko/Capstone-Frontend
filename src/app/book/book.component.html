@@ -1,1 +1,21 @@
-<p>book works!</p>
+<section class="booking">
+  <div class="custom-container">
+    <h3 style="color: red ">{{errorMessage}}</h3>
+    <form [formGroup]="bookingForm" (ngSubmit)="addBooking()">
+      <div class="form-row">
+        <div class="form-group">
+          <div class="form-row">
+            <div class="date">
+              <input type="date" class="form-control" formControlName="bookingDate" />
+            </div>
+          </div>
+        </div>
+        <div>
+          <button [routerLink]="['/user-dashboard']" type="submit" class="btn btn-danger">Cancel</button>
+
+          <button type="submit" class="btn btn-success">Proceed</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>

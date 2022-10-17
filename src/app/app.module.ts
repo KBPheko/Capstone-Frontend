@@ -21,6 +21,8 @@ import { RetrieveAllMoviesComponent } from './retrieve-all-movies/retrieve-all-m
 import { DisplayAllMoviesComponent } from './display-all-movies/display-all-movies.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { BookComponent } from './book/book.component';
+import { BookingSummaryComponent } from './booking-summary/booking-summary.component';
+import { MovieDetailsComponent } from './movie-details/movie-details.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,9 @@ import { BookComponent } from './book/book.component';
     RetrieveAllMoviesComponent,
     DisplayAllMoviesComponent,
     CheckoutComponent,
-    BookComponent
+    BookComponent,
+    BookingSummaryComponent,
+    MovieDetailsComponent
   ],
   imports: [
     BrowserModule,

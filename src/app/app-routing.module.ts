@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
 import { AddMovieComponent } from './add-movie/add-movie.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { BookingSummaryComponent } from './booking-summary/booking-summary.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { CreateprofileComponent } from './createprofile/createprofile.component';
 import { EditMovieComponent } from './edit-movie/edit-movie.component';
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'retrieve-all-movies', component: RetrieveAllMoviesComponent},
   { path: 'edit-movie-record', component: EditMovieComponent},
   { path: 'contact-us', component: ContactUsComponent},
+  { path: 'booking-summary', component: BookingSummaryComponent},
   { path: 'about', component: AboutComponent},
   { path: '**', component: PageNotFoundComponent}
 ]
