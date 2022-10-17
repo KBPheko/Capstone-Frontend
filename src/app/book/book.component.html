@@ -3,14 +3,18 @@
     <h3 style="color: red ">{{errorMessage}}</h3>
     <form [formGroup]="bookingForm" (ngSubmit)="addBooking()">
       <div class="form-row">
+        <p>Movie ID{{movie.mid}}</p>
         <div class="form-group">
           <div class="form-row">
             <div class="date">
+              <label for="">Book Date You would Like to see movie</label>
               <input type="date" class="form-control" formControlName="bookingDate" />
             </div>
           </div>
         </div>
         <div>
+
+
           <button [routerLink]="['/user-dashboard']" type="submit" class="btn btn-danger">Cancel</button>
 
           <button type="submit" class="btn btn-success">Proceed</button>

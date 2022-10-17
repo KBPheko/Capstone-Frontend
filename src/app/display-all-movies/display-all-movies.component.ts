@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Movie } from '../movie';
 import { MovieService } from '../services/movie.service';
 
@@ -11,7 +12,7 @@ export class DisplayAllMoviesComponent implements OnInit {
 
   movies: Array<Movie> = [];
 
-  constructor( public ms:MovieService) { }
+  constructor( public ms:MovieService, public router:Router) { }
 
   ngOnInit(): void {
     this.loadAllMovies();
@@ -23,6 +24,11 @@ export class DisplayAllMoviesComponent implements OnInit {
       error:(error:any)=>console.log(error),
       complete: ()=>console.log("completed")
     })
+  }
+
+  bookNow(mid:any){
+    console.log(mid);
+    this.router.navigate(['/book/'+mid])
   }
 
 }

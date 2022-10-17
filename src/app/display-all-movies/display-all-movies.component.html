@@ -21,7 +21,8 @@
           <div class="movie-book">
             <h2>{{mv.movietitle}}</h2>
             <p class="price">{{mv.genre}}</p>
-            <p><button>Book Now</button></p>
+            <p><button [routerLink]="['/movie-detail', mv.mid]" >Book Now</button></p>
+            <!--<a [routerLink]="['/movie-detail', mv.mid]">View Detail</a> -->
           </div>
 
         </div>

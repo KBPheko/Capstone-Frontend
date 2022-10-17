@@ -1,12 +1,12 @@
 export class Movie {
-  constructor( public mid:number,
-                 public movietitle:string,
-                   public imageurl:string,
-                     public ticketprice:number,
-                      public quantity:number,
-                       public language:string,
-                        public description:string,
-                          public genre:string,
-                            public showtime:string
-                ){}
+  mid: number;
+  movietitle:string;
+  imageurl:string;
+  ticketprice:number;
+  quantity:number;
+  language:string;
+  description:string;
+  genre:string;
+  showtime:string;
+  constructor( ){ }
 }

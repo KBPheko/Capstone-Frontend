@@ -23,8 +23,8 @@ export class MovieService {
     return this._http.get<Movie[]>(this.baseUrl+"/findMovies");
   }
 
-  findMovieInfo(mid:any):Observable<string> {
-    return this._http.get(this.baseUrl+"/findMovie/"+mid, {responseType:"text"});
+  findMovieInfo(mid:any):Observable<Movie> {
+    return this._http.get<Movie>(this.baseUrl+"/findMovie/"+mid);
   }
 
   deleteMovieRecord(mid:any):Observable<string> {
