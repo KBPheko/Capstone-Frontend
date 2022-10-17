@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Movie } from '../movie';
 import { BookingServiceService } from '../services/booking-service.service';
@@ -17,6 +17,7 @@ export class BookComponent implements OnInit {
   bid:any;
   movieid: any;
   bookingId: number;
+  quantity:number;
   movie: Movie;
 
   constructor( private fb: FormBuilder,
@@ -40,14 +41,25 @@ export class BookComponent implements OnInit {
     this.movieServe.findMovieInfo(this.movieid).subscribe((data: Movie) => {
       this.movie = data;
       console.log(data);  //double check
-    })
-    //this.bookService.findBookingById(this.bid).subscribe( result => {
+    });
 
-   // })
+    this.bookingForm = this.fb.group({
+      bookingdate: ['', Validators.required],
+      noOfTickets: ['', Validators.required]
+    });
   }
 
   addBooking(){
-    this.router.navigate(['/booking-summary/', this.bid]);
+    console.log(this.bookingForm.value);
+    this.bookService.addBooking(this.bookingForm.value, this.bookingId).subscribe(
+      (result: any) => {
+        this.router.navigate(['booking-summary', this.bookingId]);
+      },
+      (error: any) => {
+        this.errorMessage = error;
+      }
+    )
+    //this.router.navigate(['/booking-summary/', this.bid]);
     // this.bookService.addBooking(this.bookingForm.value, this.movieid).subscribe(
     //   (res:any) => {
     //     console.log(res.bid);

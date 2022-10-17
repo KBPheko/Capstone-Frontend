@@ -45,30 +45,31 @@
   <div class="wrapper">
     <div class="main">
       <section class="section">
-
-        <form action="">
+        <h2>Select Date and Ticket(s)</h2>
+        <h3 style="color: red">{{ errorMessage }}</h3>
+        <form [formGroup]="bookingForm" (ngSubmit)="addBooking()">
           <div class="form-group row">
             <label for="date" class="col-sm-2 col-form-label">Date:</label>
             <div class="col-sm-10">
-              <input type="date" class="form-control" id="date" >
+              <input type="date" class="form-control" id="date" formControlName="bookingdate" required />
             </div>
           </div>
           <br>
           <div class="form-group row">
             <label for="tickets" class="col-sm-2 col-form-label">No. ofTickets:</label>
             <div class="col-sm-10">
-              <input type="number" class="form-control" id="tickets" >
+              <input type="number" class="form-control" id="tickets" formControlName="noOfTickets" required />
             </div>
           </div>
           <br>
           <div class="adminList-element adminList-setting">
             <button
-              (click)="addBooking()"
+
               class="focus--box-shadow"
               type="submit"
               style="color: #dd2b60"
             >
-              Book
+              Add Booking
             </button>
           </div>
         </form>
