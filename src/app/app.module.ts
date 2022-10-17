@@ -20,6 +20,7 @@ import { EditMovieComponent } from './edit-movie/edit-movie.component';
 import { RetrieveAllMoviesComponent } from './retrieve-all-movies/retrieve-all-movies.component';
 import { DisplayAllMoviesComponent } from './display-all-movies/display-all-movies.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { BookComponent } from './book/book.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { CheckoutComponent } from './checkout/checkout.component';
     EditMovieComponent,
     RetrieveAllMoviesComponent,
     DisplayAllMoviesComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    BookComponent
   ],
   imports: [
     BrowserModule,
