@@ -1,12 +1,13 @@
-<div>
+<div class="first-row">
   <h2>Hi, {{userName}}</h2>
 
-  <a type="button" class="btn btn-secondary" routerLink="/add-movie">  Add</a>
-  |
-  <a routerLink="/retrieve-all-movies" type="button" class="btn btn-secondary" >Retrieve All Movies Records</a>
-
+  <input class="btn btn-dark" type="button" value="logout" (click)="logout()" />
 
   <br>
 
-  <input type="button" value="logout" (click)="logout()" />
+
 </div>
+
+<a type="button" class="btn btn-secondary" routerLink="/add-movie">  Add</a>
+  |
+  <a routerLink="/retrieve-all-movies" type="button" class="btn btn-secondary" >Retrieve All Movies Records</a>

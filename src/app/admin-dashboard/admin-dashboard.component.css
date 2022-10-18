@@ -1,0 +1,6 @@
+.first-row{
+  display: flex;
+}
+.first-row h2{
+  flex-grow: 1;
+}
