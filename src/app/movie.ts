@@ -8,5 +8,6 @@ export class Movie {
   description:string;
   genre:string;
   showtime:string;
+  booking_bid:number;
   constructor( ){ }
 }

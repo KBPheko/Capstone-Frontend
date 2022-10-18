@@ -26,14 +26,6 @@ export class BookComponent implements OnInit {
     private router: Router,
     private ar: ActivatedRoute) { }
 
-  // ngOnInit(): void {
-  //   this.movieid = this.ar.snapshot.params['movieid'];
-  //   console.log(this.movie.mid);
-  //   this.bookingForm = this.fb.group({
-  //     bookingDate: ['']
-  //   });
-  // }
-
   ngOnInit(): void {
     console.log("Booking page started");
     //this.movieid = this.ar.snapshot.params['mid'];
@@ -42,12 +34,16 @@ export class BookComponent implements OnInit {
     this.movieServe.findMovieInfo(this.movieid).subscribe((data: Movie) => {
       this.movie = data;
       console.log(data);  //double check
-    });
+    }),
+    (error:any) => {
+      this.errorMessage = error;
+      console.log(error);
+    };
 
     this.bookingForm = this.fb.group({
       bookingdate: ['', Validators.required],
       tickets: ['', Validators.required],
-      email: ['', Validators.required]
+      Customer: ['', Validators.required]
     });
   }
 
@@ -61,28 +57,6 @@ export class BookComponent implements OnInit {
         this.errorMessage = error;
       }
     )
-    //this.router.navigate(['/booking-summary/', this.bid]);
-    // this.bookService.addBooking(this.bookingForm.value, this.movieid).subscribe(
-    //   (res:any) => {
-    //     console.log(res.bid);
-    //     this.router.navigate(['/booking-summary', res.bid]);
-    //   },
-    //   (error:any) => {
-    //     this.errorMessage = error;
-    //   }
-    // )
   }
-
-  // addBooking(){
-  //   this.bookService.addBooking().subscribe(
-  //     (res: any) => {
-  //       console.log(res);
-  //       this.router.navigate(['/']);
-  //     },
-  //     (error: any) => {
-  //       this.errorMessage = error;
-  //     }
-  //   )
-  // }
 
 }

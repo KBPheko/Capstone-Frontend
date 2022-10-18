@@ -1,3 +1,5 @@
+import { Movie } from "./movie";
+
 export class Booking {
   // public bid:number = 0;
   // public Movie:any;
@@ -6,6 +8,8 @@ export class Booking {
 
   constructor(public bid:number,
     public bookingdate:string,
-    public Movie:any,
+    public tickets: number,
+    public Movie:Movie,
+    public Customer:any,
     public totalprice:number){ }
 }

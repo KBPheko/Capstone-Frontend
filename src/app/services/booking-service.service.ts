@@ -52,7 +52,7 @@ export class BookingServiceService {
 
   getTotal(id:any): Observable<Booking>{
     return this.http
-    .get<Booking>(this.baseUrl + '/booking/cost' + id)
+    .get<Booking>(this.baseUrl + '/booking/cost/' + id)
     .pipe(catchError(this.handleError));
   }
 }
