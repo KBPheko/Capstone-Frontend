@@ -28,7 +28,7 @@ export class BookingServiceService {
 
   addBooking(book:any, movieid:number): Observable<any>{
     return this.http.post<Booking>(
-      this.baseUrl + '/booking/' + movieid,
+      this.baseUrl + '/booking/bookmovie?mid=' + movieid,
       JSON.stringify(book),
       this.httpOptions
     ).pipe(catchError(this.handleError));
@@ -45,4 +45,14 @@ export class BookingServiceService {
     return throwError(eResponse.error.message);
   }
 
+  getBookingById(id:any): Observable<Booking>{
+    return this.http.get<Booking>(this.baseUrl + '/booking/viewBooking/' + id)
+    .pipe(catchError(this.handleError));
+  }
+
+  getTotal(id:any): Observable<Booking>{
+    return this.http
+    .get<Booking>(this.baseUrl + '/booking/cost' + id)
+    .pipe(catchError(this.handleError));
+  }
 }

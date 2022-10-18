@@ -24,7 +24,7 @@ const routes: Routes = [
   { path: 'retrieve-all-movies', component: RetrieveAllMoviesComponent},
   { path: 'edit-movie-record', component: EditMovieComponent},
   { path: 'contact-us', component: ContactUsComponent},
-  { path: 'booking-summary', component: BookingSummaryComponent},
+  { path: 'booking-summary/:id', component: BookingSummaryComponent},
   { path: 'book/:id', component: BookComponent},
   { path: 'movie-detail/:id', component: MovieDetailsComponent},
   { path: 'about', component: AboutComponent},

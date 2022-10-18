@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { MovieService } from '../services/movie.service';
 
 @Component({
@@ -22,7 +23,7 @@ export class AddMovieComponent implements OnInit {
 
   msg: string = "";
 
-  constructor( public mv: MovieService) { }
+  constructor( public mv: MovieService, public router: Router ) { }
 
   ngOnInit(): void {
   }
@@ -31,9 +32,17 @@ export class AddMovieComponent implements OnInit {
     let movie = this.movieRef.value;
     this.mv.storeMovieRecord(movie).subscribe({
       next: (result:any) => this.msg=result,
-      error:(error:any)=> this.msg=error,
-      //error:(error:any)=> console.log(error),
-      complete:()=>console.log("completed")
+      error:(error:any)=> {
+        this.msg=error.message;
+        alert(error.message);
+
+      },
+      complete:()=>{
+        this.router.navigate(['/add-movie']);
+        console.log("completed");
+        this.movieRef.reset();
+
+      }
     })
   }
 

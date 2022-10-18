@@ -36,6 +36,7 @@ export class BookComponent implements OnInit {
 
   ngOnInit(): void {
     console.log("Booking page started");
+    //this.movieid = this.ar.snapshot.params['mid'];
     this.movieid = this.ar.snapshot.paramMap.get('id');
     console.log(this.movieid);
     this.movieServe.findMovieInfo(this.movieid).subscribe((data: Movie) => {
@@ -45,15 +46,16 @@ export class BookComponent implements OnInit {
 
     this.bookingForm = this.fb.group({
       bookingdate: ['', Validators.required],
-      noOfTickets: ['', Validators.required]
+      tickets: ['', Validators.required],
+      email: ['', Validators.required]
     });
   }
 
   addBooking(){
     console.log(this.bookingForm.value);
-    this.bookService.addBooking(this.bookingForm.value, this.bookingId).subscribe(
+    this.bookService.addBooking(this.bookingForm.value, this.movieid).subscribe(
       (result: any) => {
-        this.router.navigate(['booking-summary', this.bookingId]);
+        this.router.navigate(['booking-summary', this.movieid]);
       },
       (error: any) => {
         this.errorMessage = error;
