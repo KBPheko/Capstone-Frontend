@@ -1,63 +1,68 @@
 <h2>All Movie Records</h2>
 <button type="button" [routerLink]="['/admin-dashboard']"  class="btn btn-dark">Back</button>
-<div *ngIf="flag">
-<p align="right">
-  <button class="btn btn-danger" (click)="onNoClick()">X</button>
-</p>
-  <div class="edit-container">
-    <h2>Edit Movie Details</h2>
-    <form (ngSubmit)="updateMovieInfo()" >
-    <div class="form-group">
-      <label for="mid">Movie ID</label>
-      <input type="number" [(ngModel)]="mid" name="mid" class="form-control" readonly />
-    </div>
+<div class="wrapper" *ngIf="flag">
+  <div class="formContent">
 
-    <div class="form-group">
-      <label for="imageurl">Movie Image</label>
-      <input type="text" [(ngModel)]="imageurl" name="imageurl" class="form-control" readonly />
-    </div>
+    <p align="right">
+      <button class="btn btn-light" (click)="onNoClick()">X</button>
+    </p>
+      <div class="edit-container">
+        <h2>Edit Movie Details</h2>
+        <form (ngSubmit)="updateMovieInfo()" >
+        <div class="form-group">
+          <label for="mid">Movie ID</label>
+          <input type="number" [(ngModel)]="mid" name="mid" class="form-control" readonly />
+        </div>
 
-    <div class="form-group">
-      <label for="movietitle">Movie Title</label>
-      <input type="text" [(ngModel)]="movietitle" name="movietitle" class="form-control" />
-    </div>
+        <div class="form-group">
+          <label for="imageurl">Movie Image</label>
+          <input type="text" [(ngModel)]="imageurl" name="imageurl" class="form-control" readonly />
+        </div>
 
-    <div class="form-group">
-      <label for="description">Description</label>
-      <input type="text" [(ngModel)]="description" name="description" class="form-control" />
-    </div>
+        <div class="form-group">
+          <label for="movietitle">Movie Title</label>
+          <input type="text" [(ngModel)]="movietitle" name="movietitle" class="form-control" />
+        </div>
 
-    <div class="form-group">
-      <label for="showtime">Showing Times</label>
-      <input type="text" [(ngModel)]="showtime" name="showtime" class="form-control" />
-    </div>
-    <div class="form-group">
-      <label for="ticketprice">Ticket Price</label>
-      <input type="number" [(ngModel)]="ticketprice" name="ticketprice" class="form-control" />
-    </div>
+        <div class="form-group">
+          <label for="description">Description</label>
+          <input type="text" [(ngModel)]="description" name="description" class="form-control" />
+        </div>
 
-    <div class="form-group">
-      <label for="quantity">Quantity</label>
-      <input type="number" [(ngModel)]="quantity" name="quantity" class="form-control" />
-    </div>
+        <div class="form-group">
+          <label for="showtime">Showing Times</label>
+          <input type="text" [(ngModel)]="showtime" name="showtime" class="form-control" />
+        </div>
+        <div class="form-group">
+          <label for="ticketprice">Ticket Price</label>
+          <input type="number" [(ngModel)]="ticketprice" name="ticketprice" class="form-control" />
+        </div>
 
-    <div class="form-group">
-      <label for="genre">Genre</label>
-      <input type="text" [(ngModel)]="genre" name="genre" class="form-control" />
-    </div>
+        <div class="form-group">
+          <label for="quantity">Quantity</label>
+          <input type="number" [(ngModel)]="quantity" name="quantity" class="form-control" />
+        </div>
 
-    <div class="form-group">
-      <label for="language">Language</label>
-      <input type="text" [(ngModel)]="language" name="language" class="form-control" />
-    </div>
+        <div class="form-group">
+          <label for="genre">Genre</label>
+          <input type="text" [(ngModel)]="genre" name="genre" class="form-control" />
+        </div>
 
-    <br>
+        <div class="form-group">
+          <label for="language">Language</label>
+          <input type="text" [(ngModel)]="language" name="language" class="form-control" />
+        </div>
 
-    <div class="form-group">
-      <button type="submit" class="btn btn-primary">Submit</button>
-    </div>
-  </form>
+        <br>
+
+        <div class="form-group">
+          <input type="submit" value="Done">
+        </div>
+      </form>
+      </div>
+
   </div>
+
 
 </div>
 
