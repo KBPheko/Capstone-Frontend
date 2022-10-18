@@ -15,6 +15,10 @@ export class MovieService {
     return this._http.post(this.baseUrl+"/store", movie,{responseType:"text"});
   }
 
+  searchMoviesByKeyword(keyword:string):Observable<Movie[]> {
+    return this._http.get<Movie[]>(this.baseUrl+"/filteredResults/"+keyword);
+  }
+
   updateMovieRecords(movie:any):Observable<string> {
     return this._http.put(this.baseUrl+"/update", movie,{responseType:"text"});
   }

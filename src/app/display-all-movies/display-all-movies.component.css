@@ -89,6 +89,12 @@
   margin-top: 1rem;
 }
 
+.heading-search{
+  color: red;
+  font-size: 2rem;
+  font-weight: lighter;
+}
+
 .search {
   position: absolute;
   top: 2rem;

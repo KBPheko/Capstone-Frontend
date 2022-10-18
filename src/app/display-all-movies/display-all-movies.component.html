@@ -7,42 +7,70 @@
   <div class="col-lg-6 text-center text-lg-right">
     <div class="sort">
       <div class="collection-sort">
-        <label for="">Filter By</label>
-        <input type="text" name="" id="" placeholder="all movies">
+        <form  method="get">
+          <label for="">Filter:</label>  &nbsp;
+          <input type="text" [(ngModel)]="keyword" [value]="keyword" name="keyword" id="keyword" placeholder="e.g horror"> &nbsp; 
+          <input type="submit" class="btn btn-dark" (click)="search()"value="Search"> | <input class="btn btn-secondary" type="reset" (click)="clear()" value="Clear">
+          <!-- <input type="submit" value="Search"> | <input type="reset" (click)="clear()" value="Clear"> -->
+        </form>
+
       </div> &nbsp; &nbsp;
-      <div class="collection-sort">
+      <!-- <div class="collection-sort">
         <label for="">Sort By</label>
         <input type="text" placeholder="horror"/>
-      </div>
+      </div> -->
     </div>
   </div>
 </nav>
-<section class="container movie-listing">
-  <hr>
-  <div class="movie-wrapper movie-listing__list row wrap movie-listing__list--active" >
-    <div class="flex xs6 sm3 md2 lg2" >
-        <div class="card" *ngFor="let mv of movies" >
-          <div class="movie-image">
-            <img src="{{mv.imageurl}}" alt="Movie Image">
-          </div>
-          <div class="movie-book">
-            <h2>{{mv.movietitle}}</h2>
-            <p class="price">{{mv.genre}}</p>
-            <p><button [routerLink]="['/movie-detail', mv.mid]" >Book Now</button></p>
-            <!--<a [routerLink]="['/movie-detail', mv.mid]">View Detail</a> -->
-          </div>
+<div class="flag" *ngIf="flag">
 
+
+
+  <section class="container movie-listing">
+    <hr>
+    <div class="movie-wrapper movie-listing__list row wrap movie-listing__list--active" >
+      <div class="flex xs6 sm3 md2 lg2" >
+        <h2 class="heading-search">Search Results for  "{{keyword}}"</h2>
+          <div class="card" *ngFor="let mv of filteredResults" >
+            <div class="movie-image">
+              <img src="{{mv.imageurl}}" alt="Movie Image">
+            </div>
+            <div class="movie-book">
+              <h2>{{mv.movietitle}}</h2>
+              <p class="price">{{mv.genre}}</p>
+              <p><button [routerLink]="['/movie-detail', mv.mid]" >Book Now</button></p>
+              <!--<a [routerLink]="['/movie-detail', mv.mid]">View Detail</a> -->
+            </div>
+
+          </div>
         </div>
-      </div>
-  </div>
-</section>
-
-<section >
-  <div>
-    <div class="layout movie-listing__list row wrap movie-listing__list--active">
-      <div class="flex xs6 sm3 md2 lg2">
-
-      </div>
     </div>
-  </div>
-</section>
+  </section>
+
+</div>
+
+<div *ngIf="flag2">
+
+  <section class="container movie-listing">
+    <hr>
+    <div class="movie-wrapper movie-listing__list row wrap movie-listing__list--active" >
+      <div class="flex xs6 sm3 md2 lg2" >
+          <div class="card" *ngFor="let mv of movies" >
+            <div class="movie-image">
+              <img src="{{mv.imageurl}}" alt="Movie Image">
+            </div>
+            <div class="movie-book">
+              <h2>{{mv.movietitle}}</h2>
+              <p class="price">{{mv.genre}}</p>
+              <p><button [routerLink]="['/movie-detail', mv.mid]" >Book Now</button></p>
+              <!--<a [routerLink]="['/movie-detail', mv.mid]">View Detail</a> -->
+            </div>
+
+          </div>
+        </div>
+    </div>
+  </section>
+
+</div>
+
+
