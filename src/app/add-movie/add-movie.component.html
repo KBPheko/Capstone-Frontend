@@ -1,5 +1,8 @@
-<div class="container">
-  <button type="button" [routerLink]="['/admin-dashboard']"  class="btn btn-dark">Back</button>
+<button type="button" [routerLink]="['/admin-dashboard']"  class="btn btn-dark">Back</button>
+
+<div class="wrapper">
+  <div class="formContent">
+
 
   <h2>Add New Movie Record</h2>
   <br/>
@@ -22,7 +25,7 @@
     </div>
 
     <div class="form-group">
-      <label for="quantity">Quantity</label>
+      <label for="quantity">Quantity</label> <br>
       <input type="number" formControlName="quantity" class="form-control" /> <br>
     </div>
 
@@ -40,6 +43,8 @@
 
     <div class="form-group">
       <label for="genre">Genre</label> &nbsp;
+      <input type="radio" name="genre" value="comedy" formControlName="genre" /> Comedy
+      <input type="radio" name="genre" value="animation" formControlName="genre" /> Animation
       <input type="radio" name="genre" value="horror" formControlName="genre" /> Horror
       <input type="radio" name="genre" value="action" formControlName="genre" /> Action
       <input type="radio" name="genre" value="romance" formControlName="genre" /> Romance <br>
@@ -54,4 +59,6 @@
     <input type="reset" class="btn btn-secondary" value="Clear Fields">
 
   </form>
+
+  </div>
 </div>
