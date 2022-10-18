@@ -8,8 +8,8 @@
     <div class="sort">
       <div class="collection-sort">
         <form  method="get">
-          <label for="">Filter:</label>  &nbsp;
-          <input type="text" [(ngModel)]="keyword" [value]="keyword" name="keyword" id="keyword" placeholder="e.g horror"> &nbsp; 
+          <label style="color:rgb(0, 0, 0); font-size: 30px;" >Filter:</label>  &nbsp;
+          <input type="text" [(ngModel)]="keyword" [value]="keyword" name="keyword" id="keyword" placeholder="e.g horror"> &nbsp;
           <input type="submit" class="btn btn-dark" (click)="search()"value="Search"> | <input class="btn btn-secondary" type="reset" (click)="clear()" value="Clear">
           <!-- <input type="submit" value="Search"> | <input type="reset" (click)="clear()" value="Clear"> -->
         </form>
