@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Login } from '../login';
 import { Movie } from '../movie';
 import { BookingServiceService } from '../services/booking-service.service';
 import { MovieService } from '../services/movie.service';
@@ -40,10 +41,11 @@ export class BookComponent implements OnInit {
       console.log(error);
     };
 
+    //this.bookService.
     this.bookingForm = this.fb.group({
       bookingdate: ['', Validators.required],
       tickets: ['', Validators.required],
-      Customer: ['', Validators.required]
+      customeremail: ['', Validators.required]
     });
   }
 

@@ -60,7 +60,7 @@ input[type=button], input[type=submit], input[type=reset]  {
   transition: all 0.3s ease-in-out;
 }
 
-input[type=email], input[type=password], input[type=date], input[type=text], input[type=number]{
+input[type=email], input[type=password], input[type=date], input[type=text], input[type=number], select{
   background-color: #f6f6f6;
   border: none;
   color: #0d0d0d;

@@ -1,3 +1,4 @@
+import { Login } from "./login";
 import { Movie } from "./movie";
 
 export class Booking {
@@ -10,6 +11,6 @@ export class Booking {
     public bookingdate:string,
     public tickets: number,
     public Movie:Movie,
-    public Customer:any,
+    public customeremail: string,
     public totalprice:number){ }
 }
