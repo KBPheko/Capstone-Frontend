@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AboutComponent } from './about/about.component';
 import { AddMovieComponent } from './add-movie/add-movie.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { BookComponent } from './book/book.component';
@@ -27,7 +26,6 @@ const routes: Routes = [
   { path: 'booking-summary/:id', component: BookingSummaryComponent},
   { path: 'book/:id', component: BookComponent},
   { path: 'movie-detail/:id', component: MovieDetailsComponent},
-  { path: 'about', component: AboutComponent},
   { path: '**', component: PageNotFoundComponent}
 ]
 
